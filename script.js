@@ -1,6 +1,20 @@
 'use strict';
 
+VANTA.RINGS({
+  el: "#aniBg",
+  mouseControls: true,
+  touchControls: true,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00
+})
+
+TweenMax.staggerFromTo([$('.down1'),$('.down2'),$('.down3')], 0.6, {autoAlpha:0}, {autoAlpha:1, repeat:-1, ease: Circ.easeInOut, delay:1},0.35);
+
 // put your own value below!
+// is there any deal api call ex:
+//https://api.isthereanydeal.com/v01/game/prices/?key=d5f6e9d68504fbbe8c70ce8ab3160fae457f078c&plains=elderscrollsvskyrim&country=USA&shops=steam%2Cindiegamestand%2Camazonus%2Cgog%2Chumblestore%2Cgreenmangaming
 const apiKey = '353594-Thinkful-G6HHBE40'; 
 const searchURL = 'https://tastedive.com/api/similar';
 
@@ -21,14 +35,16 @@ function displayResults(responseJson) {
   for (let i = 0; i < responseJson.Similar.Results.length; i++){
     
     $('#results-list').append(
-      `<li>
+      `<div class="game-card">
       <div class="resp-container">
           <iframe class="resp-iframe" src="${responseJson.Similar.Results[i].yUrl}" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
       </div>
+      <div class="game-details">
       <h3>${responseJson.Similar.Results[i].Name}</h3>
       <p>${responseJson.Similar.Results[i].wTeaser}</p>
       <p><a href='${responseJson.Similar.Results[i].wUrl}' target="_blank">Visit their Wiki</a></p>
-      </li>`
+      </div>
+      </div>`
     )};
   //display the results section  
   $('#results').removeClass('hidden');

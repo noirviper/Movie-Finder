@@ -1,23 +1,161 @@
 * {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
 }
+a {color: black; transition: color 0.3s linear;}
+a:hover {color: #ff0285;}
+h2 {font-size: 1.2rem; font-family: 'Press Start 2P', cursive; color: white;}
 
-button, input[type="text"] {
-  padding: 5px;
-}
-
-button:hover {
-  cursor: pointer;
+header {
+  width: 100%;
+  height: 100vh;
+  min-height: 568px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 
 .container {
-  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 5px;
+  padding: 20px;
   margin: 0 auto;
 }
+.title {
+  position: relative;
+  background: black;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  -webkit-animation: BOX-WIDTH1 0.8s ease-in-out; /* Safari 4+ */
+  -moz-animation: BOX-WIDTH1 0.8s ease-in-out; /* Fx 5+ */
+  -o-animation: BOX-WIDTH1 0.8s ease-in-out; /* Opera 12+ */
+  animation: BOX-WIDTH1 0.8s ease-in-out; /* IE 10+, Fx 29+ */
+  transform-origin: left;
+}
+.title h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  }
+.inner-title-block {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 1;
+    -webkit-animation: BOX-WIDTH 0.8s ease-in-out; /* Safari 4+ */
+  -moz-animation: BOX-WIDTH 0.8s ease-in-out; /* Fx 5+ */
+  -o-animation: BOX-WIDTH 0.8s ease-in-out; /* Opera 12+ */
+  animation: BOX-WIDTH 0.8s ease-in-out; /* IE 10+, Fx 29+ */
+  transform-origin: right;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes BOX-WIDTH1 {
+  0%   { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+@-moz-keyframes BOX-WIDTH1 {
+  0%   { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+@-o-keyframes BOX-WIDTH1 {
+  0%   { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+@keyframes BOX-WIDTH1 {
+  0%   { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+@-webkit-keyframes BOX-WIDTH {
+  0%   { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+@-moz-keyframes BOX-WIDTH {
+  0%   { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+@-o-keyframes BOX-WIDTH {
+  0%   { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+@keyframes BOX-WIDTH {
+  0%   { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.fa-chevron-down {
+  color: rgb(248, 2, 174);
+  opacity: 0;
+  display: block;
+  margin: 0 auto;
+  font-size: 3rem;
+  text-shadow: 2px 2px 0 black,
+  -2px -2px 0 black,
+  2px -2px 0 black,
+  -2px 2px 0 black;
+}
+
+section {background: #202428;}
+
+form {margin: 50px auto; text-align: center;}
+label {font-family: 'Press Start 2P', cursive; color: white; font-size: 1rem;}
+input {
+  margin: 10px auto;
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+}
+
+.button{
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+	display: block;
+	margin:5px auto;
+  font-weight: bold;
+  padding: 10px 0 10px 10px ;
+  background-color: lightgray;
+  text-shadow: -1px -1px black, 1px 1px white;
+  color: gray;
+  -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+  box-shadow: 0 .2em gray; 
+  cursor: pointer;
+  max-width: max-content;
+
+}
+.button:active {
+	box-shadow: none;
+	position: relative;
+	top: .2em;
+}
+.small {color: white; font-size: 0.7rem;}
 
 .error-message {
     color: red;
@@ -27,10 +165,23 @@ button:hover {
   display: none;
 }
 
+  .game-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 20px auto;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #ff0285;
+  }
+
 .resp-container {
     position: relative;
     overflow: hidden;
     padding-top: 56.25%;
+    width: 100%;
 }
 
 .resp-iframe {
@@ -40,4 +191,26 @@ button:hover {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+@media (min-width: 768px) {
+  .title {
+    position: relative;
+    background: black;
+    width: 100%;
+    max-width: 600px;
+    margin-left: 2em;
+  }
+  .title h1 {font-size: 3rem;}
+  h2 {font-size: 2.2rem;}
+
+  .game-card {flex-direction: row}
+  .resp-container {
+    padding-top: 33.33%;
+    width: 50%;
+  }
+  .game-details {
+    width: 50%;
+    padding: 20px;
+  }
 }
