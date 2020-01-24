@@ -29,7 +29,6 @@ header {
   justify-content: center;
   width: 90%;
   max-width: 1200px;
-  border-radius: 5px;
   padding: 20px;
   margin: 0 auto;
 }
@@ -105,8 +104,11 @@ header {
 .scroll-indicator {
   position: absolute;
   bottom: 10px;
+  width: 100%;
+  max-width: 150px;
   left: 50%;
   transform: translateX(-50%);
+  text-align: center;
 }
 .fa-chevron-down {
   color: rgb(248, 2, 174);
@@ -119,7 +121,16 @@ header {
   2px -2px 0 black,
   -2px 2px 0 black;
 }
-
+.down2 {color: white;}
+.down4 {
+  background: black;
+  padding: 4px;
+  margin: 15px auto;
+  color: white; 
+  font-family: 'Press Start 2P', cursive;
+  opacity: 0;
+}
+.down4 p {font-size: 0.7rem;}
 section {background: #202428;}
 
 form {margin: 50px auto; text-align: center;}
@@ -172,8 +183,8 @@ input {
     justify-content: space-evenly;
     margin: 20px auto;
     background: white;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 5px 20px;
+    border-radius: 20px 5px 60px 8px;
     box-shadow: 4px 4px 8px #ff0285;
   }
 
@@ -206,7 +217,7 @@ input {
 
   .game-card {flex-direction: row}
   .resp-container {
-    padding-top: 33.33%;
+    padding-top: 28%;
     width: 50%;
   }
   .game-details {

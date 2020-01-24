@@ -7,10 +7,12 @@ VANTA.RINGS({
   minHeight: 200.00,
   minWidth: 200.00,
   scale: 1.00,
-  scaleMobile: 1.00
+  scaleMobile: 1.00,
+  background: '#202428',
+  color: '#f802ae'
 })
 
-TweenMax.staggerFromTo([$('.down1'),$('.down2'),$('.down3')], 0.6, {autoAlpha:0}, {autoAlpha:1, repeat:-1, ease: Circ.easeInOut, delay:1},0.35);
+TweenMax.staggerFromTo([$('.down1'),$('.down2'),$('.down3'),$('.down4')], 0.6, {autoAlpha:0}, {autoAlpha:1, repeat:-1, ease: SteppedEase, delay:1},0.2);
 
 // put your own value below!
 // is there any deal api call ex:
@@ -57,7 +59,7 @@ function displayResults(responseJson) {
     )};
   //display the results section  
   $('#results').removeClass('hidden');
- 
+  animateResults();
 };
 
 function getGameRecommendation(query, maxResults=10) {
@@ -101,6 +103,10 @@ function watchForm() {
     const maxResults = $('#js-max-results').val();
     getGameRecommendation(searchTerm, maxResults);
   });
+}
+
+function animateResults() {
+  TweenMax.staggerFromTo($('.game-card'), 0.8, {autoAlpha:0, yPercent:15}, {autoAlpha:1, yPercent:0, ease:Power4.easeIn, delay:1},0.8);
 }
 
 $(watchForm);
