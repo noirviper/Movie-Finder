@@ -106,7 +106,7 @@ function watchForm() {
 }
 
 function animateResults() {
-  TweenMax.staggerFromTo($('.game-card'), 0.8, {autoAlpha:0, yPercent:15}, {autoAlpha:1, yPercent:0, ease:Power4.easeIn, delay:1},0.8);
+  TweenMax.staggerFromTo($('.game-card'), 0.8, {autoAlpha:0}, {autoAlpha:1, ease:Power4.easeIn, delay:1},0.8);
 }
 
 $(watchForm);

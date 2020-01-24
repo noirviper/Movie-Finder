@@ -11,7 +11,12 @@ body {
 }
 a {color: black; transition: color 0.3s linear;}
 a:hover {color: #ff0285;}
-h2 {font-size: 1.2rem; font-family: 'Press Start 2P', cursive; color: white;}
+h2 {
+  font-size: 1.2rem; 
+  font-family: 'Press Start 2P', cursive; 
+  color: white;
+  font-size: 1.2rem;font-family: 'Press Start 2P', cursive;color: #ff0285;text-shadow: 2px 2px 4px white;box-shadow: -15px -9px 2px #ff0285,10px 9px 2px #ff0285,-15px 9px 2px #ff0285, 10px -9px 2px #ff0285;width: max-content;padding: 10px;margin-left: 15px;
+}
 
 header {
   width: 100%;
