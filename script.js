@@ -1,5 +1,6 @@
 'use strict';
 
+
 VANTA.RINGS({
   el: "#aniBg",
   mouseControls: true,
