@@ -30,7 +30,7 @@ function formatQueryParams(params) {
 
 function displayResults(responseJson) {
   
-  console.log(responseJson);
+  //console.log(responseJson);
   
   $('#results-list').empty();
   // iterate through the items array
@@ -52,15 +52,13 @@ function displayResults(responseJson) {
   //display the results section  
   $('#results').removeClass('hidden');
   } else {
-    $('#results-list').append(
-      `<li>
+    $('#js-error-message').append(
+      `<div>
       <h3 style="color:red">Ooops!</h3>
       <p>It seems we do not have any recommendations for you. Please try a different search.</p>
-      </li>`
+      </div>`
     )};
-  //display the results section  
-  $('#results').removeClass('hidden');
-  animateResults();
+  
 };
 
 function getGameRecommendation(query, maxResults=10) {
@@ -75,7 +73,7 @@ function getGameRecommendation(query, maxResults=10) {
   const queryString = formatQueryParams(params);
   const url = searchURL + '?' + queryString;
 
-  console.log(url);
+ // console.log(url);
 
   fetchJsonp(url)
     .then(response => {
@@ -100,7 +98,7 @@ function watchForm() {
     event.preventDefault();
     const searchTerm = $('#js-search-term').val().replace(/[ ,]+/g, "%2C");
     
-    console.log(searchTerm);
+   // console.log(searchTerm);
     const maxResults = $('#js-max-results').val();
     getGameRecommendation(searchTerm, maxResults);
   });
