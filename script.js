@@ -1,6 +1,6 @@
 'use strict';
 
-
+//Configure animated bg
 VANTA.RINGS({
   el: "#aniBg",
   mouseControls: true,
@@ -13,30 +13,28 @@ VANTA.RINGS({
   color: '#f802ae'
 })
 
+//Animate the scroll indicator
 TweenMax.staggerFromTo([$('.down1'),$('.down2'),$('.down3'),$('.down4')], 0.6, {autoAlpha:0}, {autoAlpha:1, repeat:-1, ease: SteppedEase, delay:1},0.2);
 
-// put your own value below!
-// is there any deal api call ex:
-//https://api.isthereanydeal.com/v01/game/prices/?key=d5f6e9d68504fbbe8c70ce8ab3160fae457f078c&plains=elderscrollsvskyrim&country=USA&shops=steam%2Cindiegamestand%2Camazonus%2Cgog%2Chumblestore%2Cgreenmangaming
+//Tastedive api key and url
 const apiKey = '353594-Thinkful-G6HHBE40'; 
 const searchURL = 'https://tastedive.com/api/similar';
 
-
+//Format the query items
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
   return queryItems.join('&');
 }
 
+//Display results in the DOM
 function displayResults(responseJson) {
   
-  //console.log(responseJson);
-  
   $('#results-list').empty();
-  // iterate through the items array
   if(!$.isEmptyObject(responseJson.Similar.Results)) {
+
+
   for (let i = 0; i < responseJson.Similar.Results.length; i++){
-    
     $('#results-list').append(
       `<div class="game-card">
       <div class="resp-container">
@@ -73,9 +71,7 @@ function getGameRecommendation(query, maxResults=10) {
   const queryString = formatQueryParams(params);
   const url = searchURL + '?' + queryString;
 
- // console.log(url);
-
-  fetchJsonp(url)
+ fetchJsonp(url)
     .then(response => {
       if (response.ok) {
         return response.json();
