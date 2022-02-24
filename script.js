@@ -32,7 +32,7 @@ function displayResults(responseJson) {
   
   $('#results-list').empty();
   if(!$.isEmptyObject(responseJson.Similar.Results)) {
-
+  $('#js-error-message).html("");
 
   for (let i = 0; i < responseJson.Similar.Results.length; i++){
     $('#results-list').append(
@@ -62,7 +62,7 @@ function displayResults(responseJson) {
 function getMovieRecommendation(query, maxResults=10) {
   if (maxResults >=1 && maxResults <= 20) {
   const params = {
-    q : 'movie:'+ query,
+    q : query,
     type : 'movies',
     verbose: 1,
     limit : maxResults,
