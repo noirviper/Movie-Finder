@@ -2,7 +2,7 @@
 
 https://noirviper.github.io/Game-Finder/
 
-![Alt text](/Game-Finder.png?raw=true "Game Finder")
+![Alt text](/movie_finder.jpg?raw=true "Movie Finder")
 
 DESCRIPTION:
 This app allows users to enter the name of a video game or a video game genre and 
