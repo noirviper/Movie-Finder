@@ -32,7 +32,7 @@ function displayResults(responseJson) {
   
   $('#results-list').empty();
   if(!$.isEmptyObject(responseJson.Similar.Results)) {
-  $('#js-error-message).html("");
+  
 
   for (let i = 0; i < responseJson.Similar.Results.length; i++){
     $('#results-list').append(
@@ -90,6 +90,7 @@ function getMovieRecommendation(query, maxResults=10) {
 
 function watchForm() {
   //console.log("init");
+  $('#js-error-message).html("");
   $('form').submit(event => {
     event.preventDefault();
     const searchTerm = $('#js-search-term').val().replace(/[ ,]+/g, "%2C");
