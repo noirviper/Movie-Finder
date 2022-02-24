@@ -90,9 +90,10 @@ function getMovieRecommendation(query, maxResults=10) {
 
 function watchForm() {
   //console.log("init");
-  $('#js-error-message').html("");
+  
   $('form').submit(event => {
     event.preventDefault();
+    $('#js-error-message').html("");
     const searchTerm = $('#js-search-term').val().replace(/[ ,]+/g, "%2C");
     
    // console.log(searchTerm);
