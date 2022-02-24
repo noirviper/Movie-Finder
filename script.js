@@ -17,7 +17,7 @@ VANTA.RINGS({
 TweenMax.staggerFromTo([$('.down1'),$('.down2'),$('.down3'),$('.down4')], 0.6, {autoAlpha:0}, {autoAlpha:1, repeat:-1, ease: SteppedEase, delay:1},0.2);
 
 //Tastedive api key and url
-const apiKey = '353594-Thinkful-G6HHBE40'; 
+const apiKey = '353594-Thinkful-VP8R5R8G'; 
 const searchURL = 'https://tastedive.com/api/similar';
 
 //Format the query items
