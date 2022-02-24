@@ -59,11 +59,11 @@ function displayResults(responseJson) {
   
 };
 
-function getGameRecommendation(query, maxResults=10) {
+function getMovieRecommendation(query, maxResults=10) {
   if (maxResults >=1 && maxResults <= 20) {
   const params = {
-    q : 'game:'+ query,
-    type : 'games',
+    q : 'movie:'+ query,
+    type : 'movies',
     verbose: 1,
     limit : maxResults,
     k: apiKey
@@ -96,7 +96,7 @@ function watchForm() {
     
    // console.log(searchTerm);
     const maxResults = $('#js-max-results').val();
-    getGameRecommendation(searchTerm, maxResults);
+    getMovieRecommendation(searchTerm, maxResults);
   });
 }
 
